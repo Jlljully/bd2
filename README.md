@@ -45,11 +45,58 @@
 
 ### Ответ
 
-![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_1.png "2")
+![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_7.png "2")
 
-![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_2.png "2")
+![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_8.png "2")
 
-![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_3.png "2")
+```
+SELECT table_catalog,table_name,grantee,privilege_type FROM information_schema.table_privileges WHERE table_schema = 'public';
+```
+
+```
+test_db=# SELECT table_catalog,table_name,grantee,privilege_type FROM information_schema.table_privileges WHERE table_schema = 'public';
+ table_catalog | table_name |     grantee      | privilege_type
+---------------+------------+------------------+----------------
+ test_db       | orders     | admin            | INSERT
+ test_db       | orders     | admin            | SELECT
+ test_db       | orders     | admin            | UPDATE
+ test_db       | orders     | admin            | DELETE
+ test_db       | orders     | admin            | TRUNCATE
+ test_db       | orders     | admin            | REFERENCES
+ test_db       | orders     | admin            | TRIGGER
+ test_db       | orders     | test-admin-user  | INSERT
+ test_db       | orders     | test-admin-user  | SELECT
+ test_db       | orders     | test-admin-user  | UPDATE
+ test_db       | orders     | test-admin-user  | DELETE
+ test_db       | orders     | test-admin-user  | TRUNCATE
+ test_db       | orders     | test-admin-user  | REFERENCES
+ test_db       | orders     | test-admin-user  | TRIGGER
+ test_db       | orders     | test-simple-user | INSERT
+ test_db       | orders     | test-simple-user | SELECT
+ test_db       | orders     | test-simple-user | UPDATE
+ test_db       | orders     | test-simple-user | DELETE
+ test_db       | clients    | admin            | INSERT
+ test_db       | clients    | admin            | SELECT
+ test_db       | clients    | admin            | UPDATE
+ test_db       | clients    | admin            | DELETE
+ test_db       | clients    | admin            | TRUNCATE
+ test_db       | clients    | admin            | REFERENCES
+ test_db       | clients    | admin            | TRIGGER
+ test_db       | clients    | test-admin-user  | INSERT
+ test_db       | clients    | test-admin-user  | SELECT
+ test_db       | clients    | test-admin-user  | UPDATE
+ test_db       | clients    | test-admin-user  | DELETE
+ test_db       | clients    | test-admin-user  | TRUNCATE
+ test_db       | clients    | test-admin-user  | REFERENCES
+ test_db       | clients    | test-admin-user  | TRIGGER
+ test_db       | clients    | test-simple-user | INSERT
+ test_db       | clients    | test-simple-user | SELECT
+ test_db       | clients    | test-simple-user | UPDATE
+ test_db       | clients    | test-simple-user | DELETE
+(36 rows)
+
+
+```
 
 ## Задача 3
 
