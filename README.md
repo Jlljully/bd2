@@ -132,6 +132,14 @@ test_db=# SELECT table_catalog,table_name,grantee,privilege_type FROM informatio
 
 ### Ответ
 
+```
+INSERT INTO orders (Наименование, Цена) VALUES ('Шоколад', 10), ('Принтер', 3000), ('Книга', 500), ('Монитор', 7000), ('Гитара', 4000);
+
+INSERT INTO clients (Фамилия, "Страна проживания") VALUES ('Иванов Иван Иванович', 'USA'), ('Петров Петр Петрович', 'USA'), ('Иоганн Себастьян Бах', 'Japan'), ('Ронни Джеймс Дио', 'Russia'), ('Ritchie Blackmore', 'Russia');
+
+```
+
+![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_9.png "2")
 
 
 ## Задача 4
