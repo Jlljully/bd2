@@ -182,9 +182,8 @@ UPDATE clients SET Заказ = (SELECT id FROM orders WHERE "Наименова
 
 ![Скрин](https://github.com/Jlljully/bd2/blob/main/Screenshot_11.png "2")  
 
-eq Scan - означает, что используется последовательное, блок за блоком, чтение данных таблицы clients  
-Cost - некая виртуальная величина призванная оценить затратность операции. Первое значение 0.00 — затраты на получение первой строки. Второе — 14.20 — затраты на получение всех строк.  
-Единица измерения cost - «извлечение одной страницы в последовательном (sequential) порядке». То есть оценивается и время, и использование ресурсов.  
+Seq Scan - означает, что используется последовательное, блок за блоком, чтение данных таблицы clients  
+Cost - некая виртуальная величина призванная оценить затратность операции. Первое значение 0.00 — затраты на получение первой строки. Второе — 14.20 — затраты на получение всех строк. Единица измерения cost - «извлечение одной страницы в последовательном (sequential) порядке». То есть оценивается и время, и использование ресурсов.  
 rows - приблизительное количество возвращаемых строк при выполнении операции Seq Scan. Это значение возвращает планировщик.  
 width - это оценка PostgreSQL того, сколько, в среднем, байт содержится в одной строке, возвращенной в рамках данной операции  
 
@@ -203,4 +202,58 @@ width - это оценка PostgreSQL того, сколько, в средне
 
 ### Ответ
 
+```
+pg_dump -U admin test_db > /backup/test_db.sql
 
+root@765e04dba0f5:/backup# psql -U admin -d test_db -f /backup/test_db.sql
+SET
+SET
+SET
+SET
+SET
+ set_config
+------------
+
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+COPY 5
+COPY 5
+ setval
+--------
+      7
+(1 row)
+
+ setval
+--------
+      5
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+ALTER TABLE
+GRANT
+GRANT
+GRANT
+GRANT
+root@765e04dba0f5:/backup#
+
+```
